@@ -18,7 +18,6 @@ public class Socks4Proxy extends Proxy implements Cloneable{
 
    /**
      Creates the SOCKS4 proxy
-     @param p Proxy to use to connect to this proxy, allows proxy chaining.
      @param proxyHost Address of the proxy server.
      @param proxyPort Port of the proxy server
      @param user User name to use for identification purposes.

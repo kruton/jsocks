@@ -33,7 +33,7 @@ public class Socks5Message extends ProxyMessage{
     Construct client request or server response.
     @param cmd - Request/Response code.
     @param ip  - IP field.
-    @paarm port - port field.
+    @param port - port field.
    */
    public Socks5Message(int cmd,InetAddress ip,int port){
       super(cmd,ip,port);
@@ -69,7 +69,7 @@ public class Socks5Message extends ProxyMessage{
     Construct client request or server response.
     @param cmd - Request/Response code.
     @param hostName  - IP field as hostName, uses ADDR_TYPE of HOSTNAME.
-    @paarm port - port field.
+    @param port - port field.
    */
    public Socks5Message(int cmd,String hostName,int port){
       super(cmd,null,port);
@@ -113,7 +113,7 @@ public class Socks5Message extends ProxyMessage{
      request from given stream.
      
      @param in Input stream to read response from.
-     @param clinetMode If true read server response, else read client request.
+     @param clientMode If true read server response, else read client request.
      @throws SocksException If server response code is not SOCKS_SUCCESS(0) and
      reading in client mode, or if any error with protocol occurs.
      @throws IOException If any error happens with I/O.
@@ -143,7 +143,7 @@ public class Socks5Message extends ProxyMessage{
      request from given stream.
      
      @param in Input stream to read response from.
-     @param clinetMode If true read server response, else read client request.
+     @param clientMode If true read server response, else read client request.
      @throws SocksException If server response code is not SOCKS_SUCCESS(0) and
      reading in client mode, or if any error with protocol occurs.
      @throws IOException If any error happens with I/O.

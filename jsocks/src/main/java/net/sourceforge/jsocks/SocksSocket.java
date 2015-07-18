@@ -89,7 +89,7 @@ public class SocksSocket extends Socket{
        <li> Any IO error occured.
        <li> Any protocol error occured.
       </ul>
-      @throws IOexception if anything is wrong with I/O.
+      @throws SocksException if anything is wrong with I/O.
       @see Socks5Proxy#resolveAddrLocally
     */
     public SocksSocket(Proxy p, String host, int port) throws SocksException,
@@ -102,7 +102,6 @@ public class SocksSocket extends Socket{
 
    /**
       Connects to given ip and port using given Proxy server.
-      @param p Proxy to use.
       @param ip Machine to connect to.
       @param port Port to which to connect.
 

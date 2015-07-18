@@ -17,7 +17,7 @@ used on machines which are not behind the firewall.
 <p>
 It is only provided to make implementing other authentication schemes
 easier.<br>
-For Example: <tt><pre>
+For Example: <pre>
    class MyAuth extends socks.server.ServerAuthenticator{
     ...
     public ServerAuthenticator startSession(java.net.Socket s){
@@ -31,7 +31,7 @@ For Example: <tt><pre>
       return allow;
     }
    }
-</pre></tt>
+</pre>
 */
 public class ServerAuthenticatorNone implements ServerAuthenticator{
 

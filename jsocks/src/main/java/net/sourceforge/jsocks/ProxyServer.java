@@ -25,7 +25,7 @@ import net.sourceforge.jsocks.server.ServerAuthenticator;
     in the world. One should never use this authentication scheme unless
     one have pretty good reason to do so.
     There is a couple of other authentication schemes in socks.server package.
-    @see socks.server.ServerAuthenticator
+    @see net.sourceforge.jsocks.server.ServerAuthenticator
 */
 public class ProxyServer implements Runnable{
 
