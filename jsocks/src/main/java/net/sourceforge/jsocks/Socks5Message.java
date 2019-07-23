@@ -165,17 +165,20 @@ public class Socks5Message extends ProxyMessage{
       addrType = di.readUnsignedByte();
 
       byte addr[];
+      InetAddress ipAddress = null;
 
       switch(addrType){
          case SOCKS_ATYP_IPV4:
             addr = new byte[4];
             di.readFully(addr);
-            host = bytes2IPV4(addr,0);
+            ipAddress = bytes2IP(addr);
+            host = ipAddress.getHostAddress();
          break;
          case SOCKS_ATYP_IPV6:
            addr = new byte[SOCKS_IPV6_LENGTH];//I believe it is 16 bytes,huge!
            di.readFully(addr);
-           host = bytes2IPV6(addr,0);
+           ipAddress = bytes2IP(addr);
+           host = ipAddress.getHostAddress();
          break;
          case SOCKS_ATYP_DOMAINNAME:
            //System.out.println("Reading ATYP_DOMAINNAME");
@@ -190,10 +193,7 @@ public class Socks5Message extends ProxyMessage{
       port = di.readUnsignedShort();
 
       if(addrType != SOCKS_ATYP_DOMAINNAME && doResolveIP){
-         try{
-            ip = InetAddress.getByName(host);
-         }catch(UnknownHostException uh_ex){
-         }
+          ip = ipAddress;
       }
    }
 
