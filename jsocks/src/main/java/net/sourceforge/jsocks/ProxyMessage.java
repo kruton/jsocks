@@ -94,16 +94,12 @@ public abstract class ProxyMessage{
 //Package methods
 //////////////////
 
-   static final String bytes2IPV4(byte[] addr,int offset){
-      String hostName = ""+(addr[offset] & 0xFF);
-      for(int i = offset+1;i<offset+4;++i)
-        hostName+="."+(addr[i] & 0xFF);
-      return hostName;
-   }
-
-   static final String bytes2IPV6(byte[] addr,int offset){
-     //Have no idea how they look like!
-     return null;
+   public static InetAddress bytes2IP(byte[] addr){
+      try{
+         return InetAddress.getByAddress(addr);
+      }catch(UnknownHostException uh_ex){
+        return null;
+      }
    }
 
 }

@@ -140,16 +140,6 @@ public void write(OutputStream out) throws IOException{
       out.write(msgBytes);
    }
 
-   //Class methods
-   static InetAddress bytes2IP(byte[] addr){
-      String s = bytes2IPV4(addr,0);
-      try{
-         return InetAddress.getByName(s);
-      }catch(UnknownHostException uh_ex){
-        return null;
-      }
-   }
-
    //Constants
 
    static final String[] replyMessage ={
